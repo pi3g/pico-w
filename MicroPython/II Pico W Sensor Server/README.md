@@ -1,7 +1,7 @@
 II Pico W Sensor Server
 =======================
 
-Display realtime data from a sensor on a web server running on the Pico W.
+Display realtime data from a sensor on a web server running on the Pico W.<br>
 Watch [the video](https://youtu.be/grxjmrPT1zQ) for the full explanation.
 
 Set Up
