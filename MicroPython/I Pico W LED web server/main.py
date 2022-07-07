@@ -38,6 +38,15 @@ while timeout > 0:
     timeout -= 1
     print('Waiting for connection...')
     time.sleep(1)
+
+# Define blinking function for onboard LED to indicate error codes    
+def blink_onboard_led(num_blinks):
+    led = machine.Pin('LED', machine.Pin.OUT)
+    for i in range(num_blinks):
+        led.on()
+        time.sleep(.2)
+        led.off()
+        time.sleep(.2)
     
 # Handle connection error
 # Error meanings
@@ -48,14 +57,13 @@ while timeout > 0:
 # -1 Link Fail
 # -2 Link NoNet
 # -3 Link BadAuth
-if wlan.status() != 3:
+
+wlan_status = wlan.status()
+blink_onboard_led(wlan_status)
+
+if wlan_status != 3:
     raise RuntimeError('Wi-Fi connection failed')
 else:
-    led = machine.Pin('LED', machine.Pin.OUT)
-    for i in range(wlan.status()):
-        led.on()
-        time.sleep(.1)
-        led.off()
     print('Connected')
     status = wlan.ifconfig()
     print('ip = ' + status[0])
