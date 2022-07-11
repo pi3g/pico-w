@@ -77,8 +77,8 @@ while True:
     current_state = door_bell.value()
     if last_state == False and current_state == True:
         # Make a GET request to trigger webhook on IFTTT
-        # ifttt_url = 'https://maker.ifttt.com/trigger/pico_w_request/with/key/cGoabCNRjfBnQyWxbg-xe7tA6Q_Uma8uMmX3Qa2vUNP'
-        ifttt_url = 'https://maker.ifttt.com/trigger/door_bell_rang/with/key/cGoabCNRjfBnQyWxbg-xe7tA6Q_Uma8uMmX3Qa2vUNP'
+        # ifttt_url = 'https://maker.ifttt.com/trigger/pico_w_request/with/key/'+secrets['ifttt'_key']
+        ifttt_url = 'https://maker.ifttt.com/trigger/door_bell_rang/with/key/'+secrets['ifttt_key']
         request = requests.get(ifttt_url)
         print(request.content)
         request.close()
