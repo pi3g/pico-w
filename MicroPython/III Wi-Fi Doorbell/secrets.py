@@ -1,9 +1,5 @@
-secret = {
-    'ssid': 'couchtiere',
-    'pw': '95624610657896356407'
-    }
-
 secrets = {
-    'ssid': 'Vodafone-669025',
-    'pw': '5GxkqSdRnP94Mu2f'
+    'ssid': 'Replace-this-with-your-SSID',
+    'pw': 'Replace-this-with-your-Password',
+    'ifttt_key': 'Replace-this-with-your-IFTTT-Key'
     }
