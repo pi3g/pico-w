@@ -83,6 +83,7 @@ s.bind(addr)
 s.listen(1)
 
 print('Listening on', addr)
+led = machine.Pin('LED', machine.Pin.OUT)
 
 # Listen for connections
 while True:
