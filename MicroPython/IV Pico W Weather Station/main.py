@@ -48,10 +48,6 @@ while ap.active() == False:
 print('Connection successfull')
 print(ap.ifconfig())
 
-# start read_data thread
-# _thread.start_new_thread(read_data, (data, data_lock))
-# read_data(data, data_lock)
-
 # Create sensor object
 sensor = bme68x.BME68X()
 
