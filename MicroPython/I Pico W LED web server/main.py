@@ -98,11 +98,11 @@ while True:
         led_off = r.find('?led=off')
         print('led_on = ', led_on)
         print('led_off = ', led_off)
-        if led_on == 10:
+        if led_on > -1:
             print('LED ON')
             led.value(1)
             
-        if led_off == 10:
+        if led_off > -1:
             print('LED OFF')
             led.value(0)
             
