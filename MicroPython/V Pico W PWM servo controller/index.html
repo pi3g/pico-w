@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pico W</title>
+        <style>
+        body {
+            background-color: #212121;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+        }
+        h1 {
+            font-size: 48pt;
+        }
+        a {
+            color: #006933;
+            text-decoration: none;
+        }
+        form {
+            width: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+        }
+        output {
+            font-size: 48pt;
+            padding: 25px;
+        }
+        .slider {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 500px;
+          height: 35px;
+          border-radius: 15px;
+          background: #545454;
+          outline: none;
+        }
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background: #006933;
+          cursor: pointer;
+        }
+        .slider::-moz-range-thumb {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background: #006933;
+          cursor: pointer;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Pico W Servo Controller</h1>
+        <form id="form">
+            <input type="range" class="slider" min="0" max="180" value="slider_value" name="servo" id="servo">
+            <output></output>
+        </form>
+        <script>
+            let i = document.getElementById('servo'),
+                o = document.querySelector('output');
+
+            o.innerHTML = i.value;
+
+            i.addEventListener('input', function () {
+              o.innerHTML = i.value;
+            }, false);
+            
+            i.addEventListener('change', function ()  {
+                document.getElementById("form").submit();
+            }, false);
+        </script>
+    </body>
+</html>
